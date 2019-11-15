@@ -4,7 +4,14 @@ const app = express();
 
 connectDB();
 
-app.get('/', (req,res) => res.send('Api running'));
+app.use(express.json({ extended: false }));
+app.get('/', (req, res) => res.send('Api running'));
+
+app.use('/api/users', require('./api/users'));
+app.use('/api/posts', require('./api/posts'));
+app.use('/api/profile', require('./api/profile'));
+app.use('/api/auth', require('./api/auth'));
+
 
 const PORT = process.env.PORT || 5000;
 
