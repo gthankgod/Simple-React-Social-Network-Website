@@ -9,7 +9,7 @@ app.get('/', (req, res) => res.send('Api running'));
 
 app.use('/api/users', require('./api/users'));
 app.use('/api/posts', require('./api/posts'));
-app.use('/api/profile', require('./api/profile'));
+app.use('/api/profiles', require('./api/profile'));
 app.use('/api/auth', require('./api/auth'));
 
 
